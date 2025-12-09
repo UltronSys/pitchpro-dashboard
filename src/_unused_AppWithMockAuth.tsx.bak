@@ -5,11 +5,6 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './contexts/AuthContextMock';
 import Login from './pages/Login';
 import Dashboard from './pages/DashboardMock';
-import Organizations from './pages/Organizations';
-import Users from './pages/Users';
-import Bookings from './pages/Bookings';
-import Pitches from './pages/Pitches';
-import Settings from './pages/Settings';
 import CalendarPageMock from './pages/CalendarPageMock';
 import Layout from './components/layout/Layout';
 
@@ -25,14 +20,14 @@ const queryClient = new QueryClient({
 });
 
 // Protected Route component
-const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated } = useAuth();
-  
+
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
-  
-  return children;
+
+  return <>{children}</>;
 };
 
 // Routes component that uses auth context
@@ -51,12 +46,7 @@ const AppRoutes = () => {
         }
       >
         <Route index element={<Dashboard />} />
-        <Route path="organizations" element={<Organizations />} />
-        <Route path="users" element={<Users />} />
-        <Route path="bookings" element={<Bookings />} />
-        <Route path="pitches" element={<Pitches />} />
         <Route path="calendar" element={<CalendarPageMock />} />
-        <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>
   );
@@ -69,7 +59,7 @@ function AppWithMockAuth() {
         <AuthProvider>
           <div className="App">
             <AppRoutes />
-            
+
             <Toaster
               position="top-right"
               toastOptions={{

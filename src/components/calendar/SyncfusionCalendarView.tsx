@@ -81,7 +81,7 @@ export const SyncfusionCalendarView: React.FC<SyncfusionCalendarViewProps> = ({
         const timeLabel = `${formatTime(startTime)} - ${formatTime(endTime)}`;
 
         // Determine session type display
-        let sessionTypeDisplay = session.sessionType;
+        let sessionTypeDisplay: string = session.sessionType;
         if (session.sessionType === 'PermanentSession' && session.collectedAmount) {
           sessionTypeDisplay = `Permanent • Ksh ${session.collectedAmount.toLocaleString()}`;
         } else if (session.sessionType === 'PermanentWeekly') {

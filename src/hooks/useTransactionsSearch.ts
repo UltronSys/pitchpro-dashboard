@@ -104,19 +104,17 @@ export const useTransactionsSearch = ({
           hitsPerPage
         });
 
-        const { results } = await algoliaClient!.searchForHits([
-          {
-            indexName: TRANSACTIONS_INDEX,
+        const searchResult = await algoliaClient!.searchSingleIndex({
+          indexName: TRANSACTIONS_INDEX,
+          searchParams: {
             query: searchQuery,
             filters: filterString,
             page,
             hitsPerPage
           }
-        ]);
+        });
 
-        const searchResult = results[0];
-
-        if ('hits' in searchResult) {
+        if (searchResult.hits) {
           const hits = searchResult.hits as Array<Record<string, any>>;
 
           const transactionsData: TransactionSearchResult[] = hits.map((hit) => {

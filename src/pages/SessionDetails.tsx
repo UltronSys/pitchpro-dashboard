@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { SessionRecord } from '@/types/calendar.types';
 import { formatTime } from '@/utils/calendarTransformations';
+import toast from 'react-hot-toast';
 
 const SessionDetails: React.FC = () => {
   const { sessionId } = useParams<{ sessionId: string }>();

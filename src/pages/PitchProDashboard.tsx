@@ -295,15 +295,15 @@ const PitchProDashboard: React.FC = () => {
         <div className="flex-1 p-4 sm:p-6 lg:p-8">
           <div className="max-w-7xl mx-auto">
             {/* Show metrics error */}
-            {metricsError && (
+            {error && (
               <div className="mb-6">
-                <ErrorMessage message={metricsError} />
+                <ErrorMessage message={error} />
               </div>
             )}
 
             {/* KPI Cards Section */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
-              {metricsLoading ? (
+              {dataLoading ? (
                 // Loading skeleton for cards
                 [...Array(4)].map((_, index) => (
                   <div key={index} className="bg-white rounded-lg p-6 animate-pulse">
@@ -328,7 +328,7 @@ const PitchProDashboard: React.FC = () => {
               {/* Revenue Chart */}
               <div className="bg-white rounded-lg shadow p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">2025 Total Revenues</h3>
-                {metricsLoading ? (
+                {dataLoading ? (
                   <div className="h-72 flex items-center justify-center">
                     <LoadingSpinner />
                   </div>
@@ -371,7 +371,7 @@ const PitchProDashboard: React.FC = () => {
               {/* Bookings Chart */}
               <div className="bg-white rounded-lg shadow p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">2025 Total Bookings</h3>
-                {metricsLoading ? (
+                {dataLoading ? (
                   <div className="h-72 flex items-center justify-center">
                     <LoadingSpinner />
                   </div>

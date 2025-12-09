@@ -133,19 +133,17 @@ export const useGroupsSearch = ({
           hitsPerPage
         });
 
-        const { results } = await algoliaClient!.searchForHits([
-          {
-            indexName: PERMANENT_SESSIONS_INDEX,
+        const searchResult = await algoliaClient!.searchSingleIndex({
+          indexName: PERMANENT_SESSIONS_INDEX,
+          searchParams: {
             query: searchQuery,
             filters: filterString,
             page,
             hitsPerPage
           }
-        ]);
+        });
 
-        const searchResult = results[0];
-
-        if ('hits' in searchResult) {
+        if (searchResult.hits) {
           const hits = searchResult.hits as Array<Record<string, any>>;
 
           const groupsData: GroupSearchResult[] = hits.map((hit) => {
