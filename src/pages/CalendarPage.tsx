@@ -1,3 +1,9 @@
+/**
+ * PitchPro Admin - Calendar Page
+ * Displays weekly calendar view with session bookings
+ * @author Ultron Systems
+ * @version 1.0.0
+ */
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SyncfusionCalendarView } from '@/components/calendar/SyncfusionCalendarView';
