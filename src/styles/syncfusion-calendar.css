@@ -1,0 +1,172 @@
+/* Syncfusion Calendar Custom Styles */
+
+/* Override Syncfusion default colors */
+.syncfusion-calendar-container .e-schedule {
+  border: none;
+  font-family: inherit;
+}
+
+/* Header customization */
+.syncfusion-calendar-container .e-schedule .e-date-header-wrap {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.syncfusion-calendar-container .e-schedule .e-header-cells {
+  font-weight: 600;
+  color: #374151;
+  border-color: #e5e7eb;
+}
+
+/* Today's header highlight */
+.syncfusion-calendar-container .e-schedule .e-header-cells.e-current-day {
+  background: #dcfce7;
+  color: #2C6E49;
+  font-weight: 700;
+}
+
+/* Time cells styling */
+.syncfusion-calendar-container .e-schedule .e-time-cells {
+  color: #6b7280;
+  font-size: 12px;
+  border-color: #e5e7eb;
+}
+
+/* Work cells styling */
+.syncfusion-calendar-container .e-schedule .e-work-cells {
+  border-color: #e5e7eb;
+}
+
+/* Current time indicator */
+.syncfusion-calendar-container .e-schedule .e-current-timeline {
+  background-color: #2C6E49;
+  height: 2px;
+}
+
+/* Appointment styling */
+.syncfusion-calendar-container .e-schedule .e-appointment {
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.syncfusion-calendar-container .e-schedule .e-appointment:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Completed session styling */
+.syncfusion-calendar-container .e-schedule .e-appointment.completed {
+  background-color: #9CA3AF !important;
+  border-left: 3px solid #6B7280 !important;
+}
+
+/* Active session styling */
+.syncfusion-calendar-container .e-schedule .e-appointment.active {
+  background-color: #2C6E49 !important;
+  border-left: 3px solid #1F5437 !important;
+}
+
+/* Remove default appointment borders */
+.syncfusion-calendar-container .e-schedule .e-appointment .e-appointment-details {
+  padding: 8px;
+  height: 100%;
+}
+
+/* Scrollbar styling */
+.syncfusion-calendar-container .e-schedule .e-content-wrap::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.syncfusion-calendar-container .e-schedule .e-content-wrap::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.syncfusion-calendar-container .e-schedule .e-content-wrap::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 4px;
+}
+
+.syncfusion-calendar-container .e-schedule .e-content-wrap::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* More popup styling */
+.syncfusion-calendar-container .e-schedule .e-more-popup-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Selected cell styling */
+.syncfusion-calendar-container .e-schedule .e-selected-cell {
+  background-color: rgba(44, 110, 73, 0.05);
+}
+
+/* Disable cell selection for read-only mode */
+.syncfusion-calendar-container .e-schedule.e-read-only .e-work-cells:hover {
+  background-color: transparent;
+}
+
+/* Week view specific adjustments */
+.syncfusion-calendar-container .e-schedule .e-week-view .e-appointment {
+  min-height: 60px;
+}
+
+/* Day header date styling */
+.syncfusion-calendar-container .e-schedule .e-header-date {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Day header day name styling */
+.syncfusion-calendar-container .e-schedule .e-header-day {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+/* Today's cell highlight */
+.syncfusion-calendar-container .e-schedule .e-work-cells.e-current-day {
+  background-color: rgba(44, 110, 73, 0.03);
+}
+
+/* Appointment resize and drag handlers - hide them */
+.syncfusion-calendar-container .e-schedule .e-appointment .e-appointment-resize {
+  display: none;
+}
+
+/* Custom appointment content animation */
+.appointment-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .syncfusion-calendar-container .e-schedule .e-header-cells {
+    font-size: 12px;
+  }
+  
+  .syncfusion-calendar-container .e-schedule .e-time-cells {
+    font-size: 10px;
+  }
+  
+  .syncfusion-calendar-container .e-schedule .e-appointment {
+    font-size: 10px;
+  }
+}

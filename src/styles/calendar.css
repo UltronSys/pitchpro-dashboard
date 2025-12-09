@@ -1,0 +1,234 @@
+/* FullCalendar Custom Styling */
+
+/* Calendar container */
+.fc {
+  @apply font-sans;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  @apply border-gray-200;
+}
+
+/* Time slots */
+.fc-timegrid-slot {
+  @apply border-gray-100;
+  height: 60px !important;
+}
+
+.fc-timegrid-slot-minor {
+  @apply border-gray-50;
+}
+
+/* Day headers - Match FlutterFlow primary color */
+.fc-col-header {
+  @apply bg-gray-50;
+}
+
+.fc-col-header-cell {
+  @apply font-medium py-3 border-gray-200;
+  color: #2C6E49 !important;
+}
+
+/* Event styling */
+.fc-event {
+  @apply border-0 cursor-pointer transition-all duration-200;
+  border-radius: 6px !important;
+  overflow: hidden;
+}
+
+.fc-event:hover {
+  @apply shadow-lg;
+  transform: scale(1.02);
+}
+
+.fc-event-main {
+  @apply px-1 py-1;
+}
+
+/* Time labels */
+.fc-timegrid-slot-label {
+  @apply text-xs text-gray-600 pr-2 font-medium;
+}
+
+.fc-timegrid-slot-label-cushion {
+  @apply pr-2;
+}
+
+/* Week view specific */
+.fc-timeGridWeek-view .fc-scrollgrid {
+  @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+/* Now indicator */
+.fc-timegrid-now-indicator-line {
+  @apply border-red-500 border-2;
+}
+
+.fc-timegrid-now-indicator-arrow {
+  border-color: #ef4444;
+}
+
+/* Scrollbar styling */
+.fc-scroller {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.fc-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.fc-scroller::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+  border-radius: 4px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb {
+  @apply bg-gray-400;
+  border-radius: 4px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Grid lines */
+.fc-timegrid-divider {
+  @apply hidden;
+}
+
+.fc-timegrid-axis {
+  @apply border-r border-gray-200;
+}
+
+/* Today highlight */
+.fc-day-today {
+  @apply bg-blue-50 bg-opacity-30;
+}
+
+.fc-day-today .fc-col-header-cell-cushion {
+  @apply text-blue-600 font-bold;
+}
+
+/* Event time text */
+.fc-event-time {
+  @apply text-[10px] font-medium;
+  display: none; /* Hide default time display as we show custom */
+}
+
+/* Event title */
+.fc-event-title {
+  @apply font-medium text-xs;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fc-timegrid-slot {
+    height: 50px !important;
+  }
+  
+  .fc-col-header-cell {
+    @apply text-xs;
+  }
+  
+  .fc-timegrid-slot-label {
+    @apply text-[10px];
+  }
+}
+
+/* Loading state */
+.calendar-loading {
+  @apply animate-pulse;
+}
+
+/* Empty state */
+.calendar-empty {
+  @apply flex items-center justify-center h-96 bg-gray-50 rounded-lg;
+}
+
+/* Custom event colors for different session types */
+.fc-event.session-completed {
+  background-color: #D1D5DB !important;
+  border-color: #9CA3AF !important;
+  color: #000000 !important;
+}
+
+.fc-event.session-confirmed {
+  background-color: #4A7C59 !important;
+  border-color: #22C55E !important;
+  color: #FFFFFF !important;
+}
+
+/* Pitch filter styles */
+.pitch-filter-container {
+  @apply flex items-center gap-3 mb-4 p-3 bg-gray-50 rounded-lg;
+}
+
+/* Week navigation styles */
+.week-navigation {
+  @apply flex justify-between items-center mb-6 bg-white p-4 rounded-lg border border-gray-200 shadow-sm;
+}
+
+/* Calendar header */
+.calendar-header {
+  @apply flex justify-between items-center mb-6;
+}
+
+/* Session block styles */
+.session-block {
+  @apply p-1 text-xs leading-tight rounded cursor-pointer transition-all;
+  min-height: 50px;
+}
+
+.session-block:hover {
+  @apply shadow-md;
+  transform: scale(1.02);
+}
+
+.session-block-completed {
+  @apply bg-gray-300 text-black;
+}
+
+.session-block-active {
+  @apply bg-green-600 text-white;
+}
+
+/* Disable selection on calendar */
+.fc-timegrid {
+  user-select: none;
+}
+
+/* Hide unnecessary FullCalendar UI elements */
+.fc-timegrid-axis-frame,
+.fc-timegrid-more-link {
+  display: none;
+}
+
+/* Custom scrollbar for the entire calendar */
+.calendar-container {
+  max-height: calc(100vh - 250px);
+  overflow: auto;
+}
+
+.calendar-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.calendar-container::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+  border-radius: 5px;
+}
+
+.calendar-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-400;
+  border-radius: 5px;
+}
+
+.calendar-container::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
