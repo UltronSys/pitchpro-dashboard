@@ -13,6 +13,7 @@ import Groups from './pages/Groups';
 import Finances from './pages/Finances';
 import SessionDetails from './pages/SessionDetails';
 import { OrganizationProvider } from './contexts/OrganizationContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="/test-firebase" element={<TestFirebase />} />
           <Route path="/pitchpro" element={<PitchProDashboardSimple />} />
           <Route path="/pitchpro-firebase" element={<PitchProDashboard />} />
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
             <Route index element={<Dashboard />} />
             <Route path="calendar" element={<CalendarPage />} />
             <Route path="analytics" element={<Analytics />} />
